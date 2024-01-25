@@ -117,6 +117,8 @@ if __name__ == "__main__":
 
 def enviar_arquivo_para_moodle():
     # Configurar o WebDriver (certifique-se de ter o WebDriver correspondente ao seu navegador instalado)
+    Login = input("Login: ")
+    Senha = input("Senha: ")
     driver = webdriver.Chrome()  # Ou use o webdriver do navegador de sua escolha
 
     try:
@@ -126,12 +128,12 @@ def enviar_arquivo_para_moodle():
 
         # Preencher o campo de login
         campo_login = driver.find_element(By.XPATH, '//*[@id="username"]')
-        campo_login.send_keys("adminmoodle")
+        campo_login.send_keys(Login)
 
         # Preencher o campo de senha
         
         campo_senha = driver.find_element(By.XPATH, '//*[@id="password"]')
-        campo_senha.send_keys("Site1408")
+        campo_senha.send_keys(Senha)
         campo_senha.submit()
 
         # Esperar por alguns segundos para garantir que a página seja totalmente carregada
